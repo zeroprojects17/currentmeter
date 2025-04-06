@@ -6,14 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyAuIzr0dhRcXqTvi2XrtGreZV8ZxRp2pco",
-  authDomain: "smarthome-55493.firebaseapp.com",
-  databaseURL: "https://smarthome-55493-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "smarthome-55493",
-  storageBucket: "smarthome-55493.appspot.com",
-  messagingSenderId: "344215361582",
-  appId: "1:344215361582:web:ab123cd456ef7890ghij"
+  apiKey: "AIzaSyBGyyRaEtoi1N74Z1o2iVm1rzDqV7KkwGU",
+  authDomain: "current-ccafb.firebaseapp.com",
+  databaseURL: "https://current-ccafb-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "current-ccafb",
+  storageBucket: "current-ccafb.appspot.com",
+  messagingSenderId: "488509982583",
+  appId: "YOUR_APP_ID" // Add your actual appId here if needed
 };
+
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -115,10 +116,10 @@ function App() {
           <div className="card p-4">
             {/* Use logo512.png for login, made smaller and square */}
             <img 
-              src="/logo512.jpg" 
-              alt="Smart Home Logo" 
+              src="" 
+              alt="" 
               className="img-fluid mb-4 mx-auto d-block" 
-              style={{ width: '150px', height: '150px', objectFit: 'cover' }} 
+              // style={{ width: '150px', height: '150px', objectFit: 'cover' }} 
             />
             <h3 className="text-center">Login to Your Current Meter</h3>
             {error && <div className="alert alert-danger">{error}</div>}
@@ -233,7 +234,7 @@ function App() {
         <div className="col-md-3 mb-3">
           <div className="card">
             <div className="card-body">
-              <p className="card-title">Temperature</p>
+              <p className="card-title">Energy usage</p>
               <div className="circle d-flex justify-content-center align-items-center" style={{
                 height: '120px', 
                 width: '120px', 
@@ -242,7 +243,7 @@ function App() {
                 color: '#00ff00', 
                 fontWeight: 'bold'
               }}>
-                {temperature !== null ? `${temperature}°C` : '--'}
+                {temperature !== null ? `${temperature} W` : '--'}
               </div>
             </div>
           </div>
@@ -250,7 +251,7 @@ function App() {
         <div className="col-md-3 mb-3">
           <div className="card">
             <div className="card-body">
-              <p className="card-title">Humidity</p>
+              <p className="card-title">Current used</p>
               <div className="circle d-flex justify-content-center align-items-center" style={{
                 height: '120px', 
                 width: '120px', 
@@ -259,7 +260,7 @@ function App() {
                 color: '#00ff00', 
                 fontWeight: 'bold'
               }}>
-                {humidity !== null ? `${humidity}%` : '--'}
+                {humidity !== null ? `${humidity} A` : '--'}
               </div>
             </div>
           </div>
