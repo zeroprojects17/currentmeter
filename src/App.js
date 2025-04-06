@@ -15,7 +15,6 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID" // Add your actual appId here if needed
 };
 
-
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
@@ -27,7 +26,7 @@ function App() {
   const [temperature, setTemperature] = useState(null);
   const [humidity, setHumidity] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
-  
+
   // Login state variables
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -51,7 +50,7 @@ function App() {
     if (localStorage.getItem('loggedIn') === 'true') {
       setLoggedIn(true);
     }
-    
+
     return unsubscribeAuth;
   }, []);
 
@@ -153,15 +152,7 @@ function App() {
   }
 
   return (
-    <div className={`container-fluid text-center ${darkMode ? 'bg-dark text-white' : ''}`} style={{ minHeight: '100vh', position: 'relative' }}>
-      {/* Logout Button */}
-      <button 
-        className="btn btn-danger position-absolute top-0 end-0 m-3"
-        onClick={handleLogout}
-      >
-        Logout
-      </button>
-
+    <div className={`container-fluid text-center ${darkMode ? 'bg-dark text-white' : ''}`} style={{ minHeight: '100vh' }}>
       <h1 className="my-4">IOT BASED CURRENT METER</h1>
 
       {/* CCTV Section */}
@@ -267,6 +258,13 @@ function App() {
         </div>
       </div>
 
+      {/* Logout Button placed at the bottom */}
+      <button 
+        className="btn btn-danger my-4"
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
     </div>
   );
 }
